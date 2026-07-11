@@ -1,4 +1,4 @@
-import eslintPluginAstro from "eslint-plugin-astro"
+import eslintPluginAstro from "eslint-plugin-astro";
 
 export default [
   ...eslintPluginAstro.configs.recommended,
@@ -7,4 +7,4 @@ export default [
     processor: "astro/client-side-ts",
     rules: {},
   },
-]
+];
