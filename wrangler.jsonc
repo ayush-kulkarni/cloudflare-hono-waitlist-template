@@ -1,0 +1,39 @@
+{
+  "name": "cloudflare-hono-waitlist-template",
+  "compatibility_date": "2026-07-11",
+  "main": "src/server/index.ts",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cloudflare-hono-waitlist-template-local-db",
+      "database_id": "123",
+      "migrations_dir": "./src/server/db/migrations"
+    }
+  ],
+  "env": {
+    "staging": {
+      "vars": {
+        "ENVIRONMENT": "staging",
+        "CF_ACCESS_DOMAIN": "https://ayushkulkarni714.cloudflareaccess.com",
+        "POLICY_AUD": "c81c4ef4a81123000f970fd4e249c1999c85a544dfe6bee29a171428b148b1a1"
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "cloudflare-hono-waitlist-template-staging-db",
+          "database_id": "e1444676-0061-4e7d-bd8e-a0ac82e5acf0",
+          "migrations_dir": "./src/server/db/migrations"
+        }
+      ]
+    },
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    }
+  }
+}
